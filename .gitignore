@@ -1,0 +1,31 @@
+# Byte-compiled / cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# OS junk
+.DS_Store
+
+# Editor/IDE
+.idea/
+.vscode/
+
+# Local keys and secrets
+keys/
+keys-*/
+.env
+
+# Test/coverage/output
+.pytest_cache/
+.coverage
+coverage.xml
+
+# Generated artifacts
+*.log
+*.bin
