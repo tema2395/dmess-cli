@@ -1,0 +1,15 @@
+[Unit]
+Description=dMess Relay Server
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/dmess
+ExecStart=/opt/dmess/.venv/bin/python -m network.relay_server --host 0.0.0.0 --port 7001
+Restart=on-failure
+RestartSec=5
+User=dmess
+Group=dmess
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,21 @@
+[Unit]
+Description=dMess API + Web UI
+After=network.target relay.service
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/dmess
+ExecStart=/opt/dmess/.venv/bin/python /opt/dmess/ui/api_server.py \
+  --name ServerNode \
+  --keys-dir /opt/dmess/keys-server \
+  --relay-host 206.81.17.31 \
+  --relay-port 7001 \
+  --http-host 0.0.0.0 \
+  --http-port 8000
+Restart=on-failure
+RestartSec=5
+User=dmess
+Group=dmess
+
+[Install]
+WantedBy=multi-user.target
